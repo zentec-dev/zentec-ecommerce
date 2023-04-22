@@ -1,5 +1,6 @@
 @use "../../../styles/sass/layout/grid";
 @use "../../../styles/sass/abstracts/vars";
+@use "../../../styles/sass/base/responsive";
 
 .details {
   grid-column: vars.$grid-column-center-start-end;
@@ -9,6 +10,15 @@
   grid-template-rows: minmax(50rem, 60rem);
   gap: 4rem;
   padding-bottom: 5rem;
+
+  @include responsive.respond(tab-port) {
+    grid-template-columns: 31rem 1fr;
+  }
+
+  @include responsive.respond(phone) {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(40rem, 51rem);
+  }
 
   &_box-img {
     background-color: rgba(255, 255, 255, 0.14);
@@ -29,6 +39,11 @@
     letter-spacing: -0.22px;
     line-height: 39px;
     color: var(--color-primary);
+
+    @include responsive.respond(tab-port) {
+      width: initial;
+      line-height: 27px;
+    }
   }
   &_subtitle {
     font-size: 2.5rem;
@@ -48,8 +63,16 @@
     margin-top: 2rem;
     color: var(--color-primary-dark);
 
+    @include responsive.respond(tab-port) {
+      grid-template-columns: 1fr;
+    }
+
     & > span:nth-child(2) {
       justify-self: end;
+
+      @include responsive.respond(tab-port) {
+        justify-self: start;
+      }
     }
   }
   &_price {

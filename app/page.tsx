@@ -1,6 +1,5 @@
 import Button from "@/components/button";
 import Footer from "@/components/footer";
-import TestResponsive from "../components/testResponsive";
 
 export default function Home() {
   return (
