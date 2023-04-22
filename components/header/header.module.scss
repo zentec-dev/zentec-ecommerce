@@ -1,0 +1,9 @@
+@use "../../styles/sass/base/responsive";
+
+.nav {
+  &--scroll {
+    box-shadow: 0 21px 35px hsla(0, 0%, 20%, 0.251);
+    background-color: hsla(0, 0%, 100%, 0.14);
+    backdrop-filter: blur(23px);
+  }
+}

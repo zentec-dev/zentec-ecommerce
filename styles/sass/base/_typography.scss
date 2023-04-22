@@ -1,0 +1,91 @@
+@use "./responsive";
+@use "../abstracts/vars";
+@use "../layout/grid";
+
+.heading {
+  font-family: vars.$font-primary;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: vars.$color-primary;
+  margin: 0;
+  padding: 0;
+
+  &--display {
+    font-size: 13rem;
+  }
+  &--big {
+    font-size: 10rem;
+    &--color-sec {
+      color: vars.$color-secondary;
+    }
+    @include responsive.respond(tab-port) {
+      font-size: 7rem;
+    }
+  }
+  &--big-2 {
+    font-size: 8rem;
+    @include responsive.respond(mini-phone) {
+      font-size: 6rem;
+    }
+  }
+  &--medium {
+    font-size: 5rem;
+    &--color-sec {
+      color: vars.$color-secondary;
+    }
+    @include responsive.respond(mini-phone) {
+      font-size: 4rem;
+    }
+  }
+  &--small {
+    font-size: 3.5rem;
+  }
+  &--small-2 {
+    font-size: 2.4rem;
+  }
+  &--0 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  &--color-sec {
+    color: vars.$color-secondary;
+  }
+  &--color-brown {
+    color: vars.$color-brown-dark-2;
+  }
+  &--color-gray {
+    color: vars.$color-grey-dark-1;
+  }
+}
+.paragraph {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.09px;
+  margin: 0;
+  padding: 0;
+
+  @include responsive.respond(tab-port) {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  &--2rem {
+    font-size: 2rem;
+    font-weight: 400;
+    color: vars.$color-brown-dark-1;
+  }
+  &--4rem {
+    ///// modificaaaar nombre aqui y en html, no puede tener este nombre
+    font-size: 4rem;
+    font-weight: 500;
+    color: vars.$color-brown-dark-1;
+
+    @include responsive.respond(tab-port) {
+      font-size: 3rem;
+    }
+    @include responsive.respond(phone) {
+      display: block;
+    }
+  }
+}
