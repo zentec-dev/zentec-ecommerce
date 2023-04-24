@@ -28,12 +28,12 @@ const Header = () => {
       }
     >
       <div className="header-nav__box">
-        <Link href="/" className="header-nav__box__item">
+        <a href="#home" className="header-nav__box__item">
           Home
-        </Link>
-        <Link href="/" className="header-nav__box__item">
+        </a>
+        <a href="#quienes-somos" className="header-nav__box__item">
           ¿Quiénes somos?
-        </Link>
+        </a>
       </div>
       <Link className="header-nav__logo-box" href="/">
         <img
@@ -46,9 +46,9 @@ const Header = () => {
         <Link href="/products" className="header-nav__box__item">
           Productos
         </Link>
-        <Link href="/" className="header-nav__box__item">
+        <a href="#contactar" className="header-nav__box__item">
           Contacto
-        </Link>
+        </a>
       </div>
     </nav>
   );

@@ -1,10 +1,11 @@
 import Button from "@/components/button";
 import Footer from "@/components/footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="main-container">
-      <header className="header">
+      <header id="home" className="header">
         <h1 className="header__title heading animateJs-1 ml7">
           <span id="spanWrapperTittle" className="text-wrapper">
             <span className="letters">
@@ -14,20 +15,24 @@ export default function Home() {
         </h1>
 
         <div className="header__cta">
-          <Button size="big" label="Ver productos" />
-          <Button type="boderline" label="Coctactar" />
+          <Link href="/products" className="header-nav__box__item">
+            <Button size="big" label="Ver productos" />
+          </Link>
+          <a href="#contactar" className="header-nav__box__item">
+            <Button size="boderline" label="Coctactar" />
+          </a>
         </div>
 
         <div className="header__box-img">
           <img
             className="header__box-img__item"
             src="img/photo_header.png"
-            alt="Zentec producto1"
+            alt="Zentec producto"
           />
         </div>
       </header>
 
-      <section id="about-us" className="about-us">
+      <section id="quienes-somos" className="about-us">
         <h2 className="about-us__title heading heading--big-2 text-center">
           ¿Quiénes somos?
         </h2>
@@ -69,11 +74,9 @@ export default function Home() {
                 productos de primera. En Zentec contamos con cables AWG, THW y
                 SPT 100% cobre de producción nacional.
               </p>
-              <a href="/products/index.html">
-                <button className="btn btn-big text-center">
-                  Ver productos
-                </button>
-              </a>
+              <Link href="/products" className="header-nav__box__item">
+                <Button size="big" label="Ver productos" />
+              </Link>
             </div>
 
             <div className="card-home">
@@ -87,11 +90,9 @@ export default function Home() {
                 Disponemos de una amplia gama de bombillos y lámparas con la
                 mejor tecnología LED ¡Tenemos lo que buscas!
               </p>
-              <a href="/products/index.html">
-                <button className="btn btn-big text-center">
-                  Ver productos
-                </button>
-              </a>
+              <Link href="/products" className="header-nav__box__item">
+                <Button size="big" label="Ver productos" />
+              </Link>
             </div>
           </div>
         </div>
@@ -105,7 +106,7 @@ export default function Home() {
           Escríbenos y nos pondremos en contacto lo más pronto posible.
         </p>
 
-        <div className="contact__number">
+        <div id="contactar" className="contact__number">
           <span className="paragraph--4rem">+58 (241) 814 29 13 /</span>
           <span className="paragraph--4rem">+58 (414) 018 08 38</span>
         </div>

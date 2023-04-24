@@ -101,6 +101,7 @@
     grid-row: 3 / 4;
     align-self: start;
     margin-top: 2rem;
+    z-index: 100;
 
     @include responsive.respond(tab-port) {
       margin-top: 0;
@@ -189,7 +190,7 @@
     padding: 1rem 1rem 1rem 5rem;
   }
   @include responsive.respond(phone) {
-    grid-template-columns: max-content 1fr 5rem;
+    grid-template-columns: 1fr;
     padding: 1rem 5rem 1rem 5rem;
   }
 

@@ -1,16 +1,34 @@
+"use client";
+
 import Link from "next/link";
 import style from "./breadcrumb.module.scss";
-import { ProductMixCablesOrLightBulbs } from "@/models/product";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
-interface BreadcrumbProps {
-  product: ProductMixCablesOrLightBulbs | undefined;
-}
+const Breadcrumb = () => {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [productName, setProductName] = useState("");
+  const productsList = "Lista de productos";
+  const productDetails = "Detalle de productos";
 
-const Breadcrumb = ({ product }: BreadcrumbProps) => {
+  useEffect(() => {
+    console.log("pathname", pathname);
+
+    if (pathname !== "/products" && pathname !== null) {
+      const urlPath = pathname.split("_0-")[0];
+      const name = urlPath.replaceAll("-", " ").replaceAll("/products/", "");
+
+      setProductName(name);
+    } else {
+      setProductName("");
+    }
+  }, [pathname, searchParams]);
+
   return (
     <div className={style["breadcrumb-parent"]}>
       <h1 className="heading heading--small heading--color-sec margin-right-3rem">
-        Lista de productos
+        {pathname === "/products" ? productsList : productDetails}
       </h1>
       <nav className={style["breadcrumb"]}>
         <span className={style["breadcrumb__line"]}></span>
@@ -29,20 +47,16 @@ const Breadcrumb = ({ product }: BreadcrumbProps) => {
               Lista de productos
             </Link>
           </li>
-
-          {/* {product?.name && (
+          {productName && (
             <>
               <span className="breadcrumb__span">&gt;</span>
               <li>
-                <Link
-                  href="/products"
-                  className="breadcrumb__link breadcrumb__link--current"
-                >
-                  {product?.name}
-                </Link>
+                <span className="breadcrumb__link breadcrumb__link--current">
+                  {productName}
+                </span>
               </li>
             </>
-          )} */}
+          )}
         </ul>
       </nav>
     </div>
