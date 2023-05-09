@@ -26,7 +26,8 @@ async function getProducts() {
       createCablesAdapter(cable)
     );
 
-    setTimeout(() => {}, 2000);
+    console.log("LightbulbsData", adaptedLightbulbsData);
+    console.log("CablesData", adaptedCablesData);
 
     const ALL_PRODUCTS = {
       allProducts: [
@@ -35,6 +36,8 @@ async function getProducts() {
         { miscellaneus: [] },
       ],
     };
+
+    console.log("ALL_PRODUCTS", ALL_PRODUCTS);
 
     return ALL_PRODUCTS.allProducts;
   } catch (error) {
