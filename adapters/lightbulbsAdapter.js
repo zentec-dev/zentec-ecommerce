@@ -1,15 +1,11 @@
-import { ProductCablesProps } from "@/models/product";
-
-export const createCablesAdapter = (
-  product: ProductCablesProps
-): ProductCablesProps => {
+export const createLightbulbsAdapter = (product) => {
   return {
     id: product.id,
     internalCode: product.internalCode,
     name: product.name,
     price: product.price,
+    power: product.power,
     published: product.published,
-    caliber: product.caliber,
     description: product.description,
     available: product.available,
     discount: product.discount,

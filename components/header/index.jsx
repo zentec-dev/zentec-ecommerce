@@ -1,7 +1,7 @@
 "use client";
-import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import style from "./header.module.scss";
+import Link from "next/link";
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -28,27 +28,29 @@ const Header = () => {
       }
     >
       <div className="header-nav__box">
-        <a href="#home" className="header-nav__box__item">
-          Home
-        </a>
-        <a href="#quienes-somos" className="header-nav__box__item">
-          ¿Quiénes somos?
-        </a>
+        <Link href="#home" className="header-nav__box__item">
+          <a>Home</a>
+        </Link>
+        <Link href="#quienes-somos" className="header-nav__box__item">
+          <a>¿Quiénes somos?</a>
+        </Link>
       </div>
       <Link className="header-nav__logo-box" href="/">
-        <img
-          className="header-nav__logo"
-          src="/img/zentec-logo.svg"
-          alt="Logo Zentec"
-        />
+        <a>
+          <img
+            className="header-nav__logo"
+            src="/img/zentec-logo.svg"
+            alt="Logo Zentec"
+          />
+        </a>
       </Link>
       <div className="header-nav__box">
         <Link href="/products" className="header-nav__box__item">
-          Productos
+          <a>Productos</a>
         </Link>
-        <a href="#contactar" className="header-nav__box__item">
-          Contacto
-        </a>
+        <Link href="#contactar" className="header-nav__box__item">
+          <a>Contacto</a>
+        </Link>
       </div>
     </nav>
   );

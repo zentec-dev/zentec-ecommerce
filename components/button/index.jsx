@@ -1,14 +1,6 @@
 import style from "./button.module.scss";
 
-interface ButtonProps {
-  size?: string;
-  type?: string;
-  label?: string;
-  children?: React.ReactNode;
-  disabled?: true;
-}
-
-const Button = ({ size, type, label, children, disabled }: ButtonProps) => {
+const Button = ({ size, type, label, children, disabled }) => {
   const classes = [
     style.btn,
     size && style[`btn-${size}`],
