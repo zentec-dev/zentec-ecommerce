@@ -28,15 +28,15 @@ const Header = () => {
       }
     >
       <div className="header-nav__box">
-        <Link href="#home" className="header-nav__box__item">
-          <a>Home</a>
+        <Link href="/#home">
+          <a className="header-nav__box__item">Home</a>
         </Link>
-        <Link href="#quienes-somos" className="header-nav__box__item">
-          <a>¿Quiénes somos?</a>
+        <Link href="/#quienes-somos">
+          <a className="header-nav__box__item">¿Quiénes somos?</a>
         </Link>
       </div>
-      <Link className="header-nav__logo-box" href="/">
-        <a>
+      <Link href="/">
+        <a className="header-nav__logo-box">
           <img
             className="header-nav__logo"
             src="/img/zentec-logo.svg"
@@ -45,11 +45,11 @@ const Header = () => {
         </a>
       </Link>
       <div className="header-nav__box">
-        <Link href="/products" className="header-nav__box__item">
-          <a>Productos</a>
+        <Link href="/products">
+          <a className="header-nav__box__item">Productos</a>
         </Link>
-        <Link href="#contactar" className="header-nav__box__item">
-          <a>Contacto</a>
+        <Link href="/#contactar">
+          <a className="header-nav__box__item">Contacto</a>
         </Link>
       </div>
     </nav>

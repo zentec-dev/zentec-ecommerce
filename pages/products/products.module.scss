@@ -1,5 +1,6 @@
 @use "../../styles/sass/layout/grid";
 @use "../../styles/sass/abstracts/vars";
+@use "../../styles/sass/base/responsive";
 
 .layout {
   display: grid;
@@ -109,8 +110,17 @@
     grid-row: 3 / 4;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    grid-template-rows: repeat(auto-fit, 36rem);
+    grid-template-rows: repeat(auto-fit, minmax(34rem, 36rem));
     gap: 2rem;
+
+    @include responsive.respond(between-pc-and-tab-port) {
+      grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    }
+
+    @include responsive.respond(phone) {
+      grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
+      grid-template-rows: repeat(auto-fit, minmax(34rem, 39rem));
+    }
 
     &-empty {
       display: grid;

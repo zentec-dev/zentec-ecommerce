@@ -10,16 +10,16 @@ const CardProduct = ({ product }) => {
   const productRoute = createProductRoute({ product });
 
   return (
-    <Link href={`./products/[id]`} className={style.product}>
-      <a>
-        <div className={style["product__box-img"]}>
+    <Link href={`./products/${productRoute}`}>
+      <a className={style.product}>
+        <figure className={style["product__box-img"]}>
           <img
             className={style["product__img"]}
             src={product.image.route}
             alt={product.name}
             loading="lazy"
           />
-        </div>
+        </figure>
         <div className={style["product__box1"]}>
           <p className={style["product__title"]}>{product.name}</p>
           {/* <span className={style["product__subtitle"]}>#16 / #18</span> */}

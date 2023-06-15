@@ -9,8 +9,6 @@ import Header from "../../components/header";
 import style from "./products.module.scss";
 
 export async function getServerSideProps() {
-  console.log("--------------------------234");
-
   try {
     const resLightbulb = await getDocs(lightbulbsRef);
     const resCables = await getDocs(cablesRef);
@@ -61,7 +59,6 @@ const getAllProductsPublished = ({ allProducts }) => {
 
 const ProductsPage = ({ products }) => {
   const allProducts = products.allProducts;
-
   const sortedProducts = getAllProductsPublished({ allProducts });
 
   return (
@@ -72,9 +69,13 @@ const ProductsPage = ({ products }) => {
           name="description"
           content="Productos Zentec - bombillos y cables"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/png" href="favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet"

@@ -1,5 +1,6 @@
 @use "../../styles/sass/layout/grid";
 @use "../../styles/sass/abstracts/vars";
+@use "../../styles/sass/base/responsive";
 
 .breadcrumb {
   display: flex;
@@ -11,6 +12,12 @@
     display: flex;
     align-items: center;
     margin: 5rem 0 3rem 0;
+
+    @include responsive.respond(phone) {
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+    }
   }
 
   &__box {
@@ -33,5 +40,9 @@
     height: 2.5rem;
     background-color: var(--color-primary-dark);
     margin-right: 2rem;
+
+    @include responsive.respond(phone) {
+      display: none;
+    }
   }
 }
